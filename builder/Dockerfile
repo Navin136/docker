@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:impish
 MAINTAINER Navin136
 
 # Environment Variables
