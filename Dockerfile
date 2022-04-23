@@ -19,13 +19,10 @@ RUN apt-get install tzdata flex bison python -y
 RUN apt-mark hold tzdata
 RUN echo 'en_GB.UTF-8 UTF-8' > /etc/locale.gen
 RUN /usr/sbin/locale-gen
-RUN ln -snf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-RUN echo Asia/Jakarta > /etc/timezone
+RUN ln -snf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+RUN echo Asia/Kolkata > /etc/timezone
 RUN curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
 RUN chmod a+rx /usr/local/bin/repo
 RUN git config --global user.name Navin136
 RUN git config --global user.email nkwhitehat@gmail.com
 WORKDIR /tmp
-
-# Mount 
-VOLUME ["/tmp/rom", "/tmp/ccache"]
