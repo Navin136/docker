@@ -29,3 +29,6 @@ RUN mkdir /root/.config
 RUN mkdir /root/.config/rclone
 RUN echo "[navin]\ntype = drive\nscope = drive\nroot_folder_id = \ntoken = {\"access_token\":\"ya29.A0ARrdaM8zjWorXyJYfZ2QNlTrkBM4_8VJLikAmHVT3YOmggVa8nTgnjqd_TPC67dL--D74bLtCIhN-xijYC2GHDRctWbHZ7o8XV_G69tLN57VXeDb18kXiDandK0l2IrMLSrtjhWHn0-ttBwwd6oPMgfHnE3G\",\"token_type\":\"Bearer\",\"refresh_token\":\"1//0gzqb69AX9PbDCgYIARAAGBASNwF-L9IrFql58BOfA_AU_o47vuMNBSkqyaAXhIN3skxUv73e3mdByA9WhJ3dfoDvA3DQk75KX2o\",\"expiry\":\"2022-05-03T12:48:34.713524399+05:30\"}\nteam_drive = 0ADfyXc8WPrvxUk9PVA\n" > /root/.config/rclone/rclone.conf
 RUN mkdir /root/rom
+
+# Copt Rootfs
+COPY rootfs /
