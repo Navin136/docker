@@ -1,0 +1,16 @@
+env:
+  BOT_TOKEN: "ENCRYPTED[!970c411a816e3831ee594a63a857d4e5f918c4e2353d1e100502d5e7c5610e1f0eeab85b04d6161e6f3fe7806d3444fa!]"
+  CHAT_ID: "ENCRYPTED[!23d6f2f3b6d7a0ac5a54ea1b061855a11db8c757b618faece45220c7918bb9a92e16c3484bfe3d331132ef1c9a0be1b6!]"
+  PASSWD: "ENCRYPTED[!225ee71f77057df0162dd8476b39940126b911d5cf75ba1e02cd95a6a63c576a76c01528286e54a44f6307b84d84e9e8!]"
+  CIRRUS_CLONE_DEPTH: "1"
+
+task:
+  name: "Build, Upload"
+  timeout_in: 25m
+  container:
+    image: navin136/builder:latest
+    cpu: 4
+    memory: 16G
+
+  Build-upload_script:
+     - ./build.sh
