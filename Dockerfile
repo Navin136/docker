@@ -7,8 +7,6 @@ ENV LANG=C.UTF-8
 ENV JAVA_OPTS=" -Xmx7G "
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ENV USE_CCACHE=1
-ENV HOME=/root
-WORKDIR /tmp
 
 # Install Required Packages while building docker image
 RUN apt-get update -y
@@ -25,6 +23,11 @@ RUN curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapi
 RUN chmod a+rx /usr/local/bin/repo
 RUN git config --global user.name Navin136
 RUN git config --global user.email nkwhitehat@gmail.com
+RUN useradd -rm -d /home/navin -s /bin/bash -g root -G sudo -u 1001 navin
+RUN chown navin /home/navin
+RUN chmod 777 /home/navin
+USER navin
+WORKDIR /home/navin
 
 # Copt Rootfs
 COPY rootfs /
