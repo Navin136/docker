@@ -28,6 +28,8 @@ RUN chown navin /home/navin
 RUN chmod 777 /home/navin
 USER navin
 WORKDIR /home/navin
+RUN mkdir -p /home/navin/.config/rclone
+RUN printf '[nk]\ntype = drive\nscope = drive\nroot_folder_id = \ntoken = {"access_token":"ya29.a0Aa4xrXOPyd2iOBryWGGkRVZG9sq6ZxVAZ5Jy7rnv4-WasZwyYnvaHC7USmGuOWF1vxvB1B2Z9yNz9AUrW9cDRY-k2a5PnBozyiPNhRB3uMWFRWwNtZVUy13Rlqj7h-mNO2I2fYtVjKYlURwoxl8qNanZTk_DwwaCgYKATASARESFQEjDvL93752wAQpDMXg_mI-BGdfYA0165","token_type":"Bearer","refresh_token":"1//0g4VP6tfWjFHECgYIARAAGBASNwF-L9IrnHDKqgO80l0ThwBqYAGxkKFvUXCvl2I4ighlMV2DPcEIWSt88h1TNr00Em7VjJ0hKyc","expiry":"2022-10-10T22:40:41.660296785+05:30"}\nteam_drive = 0AB_23HEGVMJ0Uk9PVA\n ' > /home/navin/.config/rclone/rclone.conf
 
 # Copt Rootfs
 COPY rootfs /
