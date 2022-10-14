@@ -13,6 +13,8 @@ file() {
 	-F "parse_mode=html" \
 	-F caption="$2 | <b>MD5 Checksum : </b><code>$MD5</code>"
 }
+free -h
+nproc --all
 docker login -u navin136 -p '#$'$PASSWORD || { echo "Docker Login failed" && msg "<b>Docker Login Failed</b>" && exit 1; }
 msg "<b>Hey!! Docker Build Triggered..</b>%0A<b>Wanna see Progress: </b><a href='https://cirrus-ci.com/github/Navin136/docker'>Click Here</a>"
 BUILD_START=$(date +"%s")
