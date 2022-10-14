@@ -4,7 +4,7 @@ MAINTAINER Navin136
 # Environment Variables
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG=C.UTF-8
-ENV JAVA_OPTS=" -Xmx7G "
+ENV JAVA_OPTS=" -Xmx16G "
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ENV USE_CCACHE=1
 
