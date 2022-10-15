@@ -4,9 +4,7 @@ MAINTAINER Navin136
 # Environment Variables
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG=C.UTF-8
-ENV CIRRUS_CPU=24
-ENV ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx120G"
-ENV JAVA_OPTS=" -Xmx120G "
+ENV JAVA_OPTS=" -Xmx7G "
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ENV USE_CCACHE=1
 
