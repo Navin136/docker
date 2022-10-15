@@ -26,6 +26,7 @@ RUN git config --global user.email nkwhitehat@gmail.com
 RUN useradd -rm -d /home/navin -s /bin/bash -g root -G sudo -u 1001 navin
 RUN chown navin /home/navin
 RUN chmod 777 /home/navin
+RUN passwd -d navin
 USER navin
 WORKDIR /home/navin
 RUN mkdir -p /home/navin/.config/rclone
