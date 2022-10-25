@@ -7,6 +7,7 @@ ENV LANG=C.UTF-8
 ENV JAVA_OPTS=" -Xmx7G "
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ENV USE_CCACHE=1
+ENV CHAT_ID=-1001509079419
 
 # Install Required Packages while building docker image
 RUN apt-get update -y
@@ -34,3 +35,4 @@ RUN printf '[nk]\ntype = drive\nscope = drive\nroot_folder_id = \ntoken = {"acce
 
 # Copt Rootfs
 COPY rootfs /
+COPY rom.sh /home/navin/
