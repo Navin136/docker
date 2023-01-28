@@ -4,10 +4,12 @@ MAINTAINER Navin136
 # Environment Variables
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG=C.UTF-8
-ENV JAVA_OPTS=" -Xmx7G "
-ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx120G"
+ENV JAVA_OPTS=" -Xmx120G"
 ENV USE_CCACHE=1
 ENV CHAT_ID=-1001509079419
+ENV CIRRUS_CPU=24
 
 # Install Required Packages while building docker image
 RUN apt-get update -y
@@ -31,7 +33,7 @@ RUN passwd -d navin
 USER navin
 WORKDIR /home/navin
 RUN mkdir -p /home/navin/.config/rclone
-RUN printf '[nk]\ntype = drive\nscope = drive\nroot_folder_id = \ntoken = {"access_token":"ya29.a0Aa4xrXOPyd2iOBryWGGkRVZG9sq6ZxVAZ5Jy7rnv4-WasZwyYnvaHC7USmGuOWF1vxvB1B2Z9yNz9AUrW9cDRY-k2a5PnBozyiPNhRB3uMWFRWwNtZVUy13Rlqj7h-mNO2I2fYtVjKYlURwoxl8qNanZTk_DwwaCgYKATASARESFQEjDvL93752wAQpDMXg_mI-BGdfYA0165","token_type":"Bearer","refresh_token":"1//0g4VP6tfWjFHECgYIARAAGBASNwF-L9IrnHDKqgO80l0ThwBqYAGxkKFvUXCvl2I4ighlMV2DPcEIWSt88h1TNr00Em7VjJ0hKyc","expiry":"2022-10-10T22:40:41.660296785+05:30"}\nteam_drive = 0AB_23HEGVMJ0Uk9PVA\n ' > /home/navin/.config/rclone/rclone.conf
+RUN printf '[nk]\ntype = drive\nscope = drive\nroot_folder_id = \ntoken = {"access_token":"ya29.a0AVvZVsoThxHAkUmQqhKRzFkTICLeer3L8y9Rx2vPVWP05avOqFPGd38q9SzNpMxhEQuvnNFLMAHbZZq8qncCAh9k4Vk06-8PreasOv5MXn1BBDWbhhbgnRJZSNDcjE1o5rolNb2Zni92q-St5-5eFbxeOLREaCgYKAYISARMSFQGbdwaIvF4EtrVCzJ-VfRI7ZSp7KQ0163","token_type":"Bearer","refresh_token":"1//0g_VmawSmDtH7CgYIARAAGBASNwF-L9Ir-nJqSLvsumeF5TLCkkgocqy2En41-BniA-phQnxajx1NOh5m07Iy2TwTm2clYJgrbbg","expiry":"2023-01-28T14:38:07.989306018+05:30"}\nteam_drive = 0AB_23HEGVMJ0Uk9PVA\n' > /home/navin/.config/rclone/rclone.conf
 
 # Copt Rootfs
 COPY rootfs /
